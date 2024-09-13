@@ -105,7 +105,8 @@ def assign(
     chuck = kwargs.get("chuck", False)
 
     # 加载已有订阅
-
+    subscriptions = load_exist(username, gist_id, access_token, subscribes_file)
+    logger.info(f"load exists subscription finished, count: {len(subscriptions)}")
 
     # 是否允许特殊协议
     special_protocols = AirPort.enable_special_protocols()
